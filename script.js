@@ -27,6 +27,55 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
+const root = document.documentElement;
+
+window.addEventListener('pointermove', (event) => {
+  root.style.setProperty('--pointer-x', `${event.clientX}px`);
+  root.style.setProperty('--pointer-y', `${event.clientY}px`);
+});
+
+const revealTargets = document.querySelectorAll(
+  '.stat-card, .info-panel, .quote-card, .timeline-item, .card, .gallery-card, .faq-item, .location-box, .map-placeholder, .volunteer-form, .pix-card'
+);
+
+revealTargets.forEach((element) => {
+  element.classList.add('reveal-card');
+});
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.12 }
+);
+
+revealTargets.forEach((element) => revealObserver.observe(element));
+
+if (window.matchMedia('(pointer: fine)').matches) {
+  const tiltTargets = document.querySelectorAll('.tilt-card, .hero-card, .gallery-card');
+
+  tiltTargets.forEach((card) => {
+    card.addEventListener('mousemove', (event) => {
+      const rect = card.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      const rotateX = ((y / rect.height) - 0.5) * -6;
+      const rotateY = ((x / rect.width) - 0.5) * 6;
+
+      card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+}
+
 const volunteerForm = document.getElementById('volunteerForm');
 const formMessage = document.getElementById('formMessage');
 

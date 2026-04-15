@@ -11,12 +11,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="site-glow" aria-hidden="true"></div>
+
     <header class="topbar">
       <div class="container nav">
         <a class="brand" href="#inicio" aria-label="A Palavra Revelada">
@@ -36,23 +38,31 @@
 
     <main>
       <section class="hero" id="inicio">
+        <div class="hero-orb hero-orb-a" aria-hidden="true"></div>
+        <div class="hero-orb hero-orb-b" aria-hidden="true"></div>
+
         <div class="container hero-grid">
           <div class="hero-copy">
             <span class="pill">16ª edição • 15 anos de história</span>
-            <h1>A Palavra Revelada 2027</h1>
-            <h2>O Evangelho Eterno</h2>
-            <p>
-              Em Campina Grande - PB, o evento segue reunindo pessoas de várias
-              cidades para viver um carnaval diferente: mais Bíblia, comunhão,
-              louvor e compromisso com a missão.
+
+            <div class="hero-title-stack">
+              <span class="hero-line">A Palavra</span>
+              <span class="hero-line hero-line-highlight">Revelada</span>
+              <span class="hero-line hero-line-small">Carnaval 2027</span>
+            </div>
+
+            <p class="hero-lead">
+              Uma experiência bíblica com atmosfera mais profunda, visual mais
+              marcante e uma mensagem urgente para este tempo: O Evangelho
+              Eterno.
             </p>
 
             <div class="hero-meta">
-              <div>
+              <div class="meta-panel">
                 <strong>Período</strong>
                 <span>Carnaval 2027</span>
               </div>
-              <div>
+              <div class="meta-panel">
                 <strong>Local</strong>
                 <span>Quinta da Colina • Catolé</span>
               </div>
@@ -69,7 +79,9 @@
             </div>
           </div>
 
-          <div class="hero-card">
+          <div class="hero-card tilt-card">
+            <span class="hero-visual-tag">Apocalipse 14 • profecia • missão</span>
+
             <div class="countdown-card">
               <p class="card-label">Contagem regressiva para o evento</p>
               <div class="countdown" aria-live="polite">
@@ -81,14 +93,43 @@
             </div>
 
             <div class="theme-card">
-              <h3>Atmosfera da edição</h3>
+              <h3>O Evangelho Eterno</h3>
               <p>
-                Depois de temas marcantes nas edições anteriores, a próxima
-                jornada aponta novamente para esperança, preparação espiritual e
-                proclamação da verdade.
+                Uma convocação para adorar o Criador, viver com fidelidade e
+                anunciar a esperança com beleza, clareza e convicção.
               </p>
             </div>
+
+            <div class="experience-rail">
+              <span>Campina Grande</span>
+              <span>Caravanas</span>
+              <span>Louvor</span>
+            </div>
           </div>
+        </div>
+
+        <div class="scroll-cue">desça para explorar</div>
+      </section>
+
+      <section class="marquee-block" aria-hidden="true">
+        <div class="marquee-track">
+          <span>O Evangelho Eterno</span>
+          <span>•</span>
+          <span>Reavivamento</span>
+          <span>•</span>
+          <span>Profecia</span>
+          <span>•</span>
+          <span>Louvor</span>
+          <span>•</span>
+          <span>Missão</span>
+          <span>•</span>
+          <span>Caravanas</span>
+          <span>•</span>
+          <span>O Evangelho Eterno</span>
+          <span>•</span>
+          <span>Reavivamento</span>
+          <span>•</span>
+          <span>Profecia</span>
         </div>
       </section>
 
