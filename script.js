@@ -89,9 +89,16 @@ revealTargets.forEach((element) => revealObserver.observe(element));
 const heroTitle = document.querySelector('.hero-title-stack');
 const heroOrbA = document.querySelector('.hero-orb-a');
 const heroOrbB = document.querySelector('.hero-orb-b');
+const scrollProgress = document.getElementById('scrollProgress');
 
 window.addEventListener('scroll', () => {
   const offset = window.scrollY;
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = maxScroll > 0 ? (offset / maxScroll) * 100 : 0;
+
+  if (scrollProgress) {
+    scrollProgress.style.width = `${progress}%`;
+  }
 
   if (heroTitle) {
     heroTitle.style.transform = `translateY(${offset * 0.08}px)`;
