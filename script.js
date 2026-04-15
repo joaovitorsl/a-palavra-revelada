@@ -65,7 +65,7 @@ window.addEventListener('pointermove', (event) => {
 });
 
 const revealTargets = document.querySelectorAll(
-  '.stat-card, .info-panel, .quote-card, .timeline-item, .schedule-card, .edition-card, .card, .gallery-card, .faq-item, .location-box, .map-placeholder, .volunteer-form, .pix-card'
+  '.stat-card, .info-panel, .quote-card, .timeline-item, .schedule-card, .history-item, .card, .gallery-card, .faq-item, .location-box, .map-placeholder, .volunteer-form, .pix-card'
 );
 
 revealTargets.forEach((element) => {
@@ -107,17 +107,17 @@ window.addEventListener('scroll', () => {
 });
 
 if (window.matchMedia('(pointer: fine)').matches) {
-  const tiltTargets = document.querySelectorAll('.tilt-card, .hero-card, .gallery-card, .edition-card');
+  const tiltTargets = document.querySelectorAll('.hero-card');
 
   tiltTargets.forEach((card) => {
     card.addEventListener('mousemove', (event) => {
       const rect = card.getBoundingClientRect();
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
-      const rotateX = ((y / rect.height) - 0.5) * -6;
-      const rotateY = ((x / rect.width) - 0.5) * 6;
+      const rotateX = ((y / rect.height) - 0.5) * -3;
+      const rotateY = ((x / rect.width) - 0.5) * 3;
 
-      card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+      card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-2px)`;
     });
 
     card.addEventListener('mouseleave', () => {
@@ -161,9 +161,9 @@ copyPixButton.addEventListener('click', async () => {
   }
 
   window.open(officialInstagram, '_blank');
-  copyPixButton.textContent = 'Abrindo contato oficial...';
+  copyPixButton.textContent = 'Abrindo contato...';
 
   setTimeout(() => {
-    copyPixButton.textContent = 'Copiar chave PIX';
+    copyPixButton.textContent = 'Solicitar chave PIX';
   }, 1800);
 });
