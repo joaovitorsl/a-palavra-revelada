@@ -45,15 +45,15 @@
 
         <div class="container hero-grid">
           <div class="hero-copy">
-            <span class="pill">16ª edição • 15 anos de história</span>
+            <span class="pill" id="heroPill">16ª edição • 15 anos de história</span>
 
             <div class="hero-title-stack">
-              <span class="hero-line">A Palavra</span>
-              <span class="hero-line hero-line-highlight">Revelada</span>
-              <span class="hero-line hero-line-small">O evangelho eterno</span>
+              <span class="hero-line" id="heroLine1">A Palavra</span>
+              <span class="hero-line hero-line-highlight" id="heroLine2">Revelada</span>
+              <span class="hero-line hero-line-small" id="heroLine3">O evangelho eterno</span>
             </div>
 
-            <p class="hero-lead">
+            <p class="hero-lead" id="heroLead">
               Um encontro para estudar a Palavra, viver comunhão e se preparar
               para a 16ª edição com beleza, clareza e propósito.
             </p>
@@ -61,23 +61,23 @@
             <div class="hero-meta">
               <div class="meta-panel">
                 <strong>Período</strong>
-                <span>5 a 9 de fevereiro</span>
+                <span id="heroPeriod">5 a 9 de fevereiro</span>
               </div>
               <div class="meta-panel">
                 <strong>Local</strong>
-                <span>Campina Grande • PB</span>
+                <span id="heroCity">Campina Grande • PB</span>
               </div>
             </div>
 
             <div class="cta-row">
-              <a class="btn btn-primary" href="https://www.even3.com.br/a-palavra-revelada-535620/" target="_blank" rel="noreferrer">Inscreva-se</a>
+              <a class="btn btn-primary" id="ctaInscricao" href="https://www.even3.com.br/a-palavra-revelada-535620/" target="_blank" rel="noreferrer">Inscreva-se</a>
               <a class="btn btn-secondary" href="#voluntariado">Quero me voluntariar</a>
               <a class="btn btn-secondary" href="#caravanas">Trazer minha caravana</a>
             </div>
 
             <div class="social-proof">
-              <a class="mini-link" href="https://www.instagram.com/apalavrareveladaoficial/" target="_blank" rel="noreferrer">Instagram oficial</a>
-              <a class="mini-link" href="https://www.youtube.com/@apalavrareveladaiasd" target="_blank" rel="noreferrer">Canal no YouTube</a>
+              <a class="mini-link" id="miniInstagram" href="https://www.instagram.com/apalavrareveladaoficial/" target="_blank" rel="noreferrer">Instagram oficial</a>
+              <a class="mini-link" id="miniYoutube" href="https://www.youtube.com/@apalavrareveladaiasd" target="_blank" rel="noreferrer">Canal no YouTube</a>
             </div>
           </div>
 
@@ -98,17 +98,17 @@
               <p class="card-label">Inscrições estimadas</p>
               <div class="registration-head">
                 <strong id="registrationCount">1372</strong>
-                <span>de 2000 vagas</span>
+                <span id="registrationMeta">de 2000 vagas</span>
               </div>
               <div class="registration-bar" aria-label="Progresso de inscrições">
                 <span id="registrationFill"></span>
               </div>
-              <small>Movimento inicial de caravanas, voluntários e interessados na edição 2027.</small>
+              <small id="registrationNote">Movimento inicial de caravanas, voluntários e interessados na edição 2027.</small>
             </div>
 
             <div class="theme-card">
-              <h3>O Evangelho Eterno</h3>
-              <p>
+              <h3 id="themeTitle">O Evangelho Eterno</h3>
+              <p id="themeText">
                 Uma convocação para adorar o Criador, viver com fidelidade e
                 anunciar a esperança com beleza, clareza e convicção.
               </p>
@@ -239,7 +239,7 @@
             </p>
           </div>
 
-          <div class="schedule-carousel">
+          <div class="schedule-carousel" id="scheduleCarousel">
             <article class="schedule-day-card">
               <div class="schedule-day-top">
                 <span class="lineup-date">05 fev • sexta</span>
@@ -345,7 +345,7 @@
               Neste momento, esta área funciona como um ponto simples de apoio e
               contribuição para quem deseja participar mais de perto.
             </p>
-            <a class="btn btn-primary" href="https://www.instagram.com/apalavrareveladaoficial/" target="_blank" rel="noreferrer">Quero apoiar o evento</a>
+            <a class="btn btn-primary" id="supportLink" href="https://www.instagram.com/apalavrareveladaoficial/" target="_blank" rel="noreferrer">Quero apoiar o evento</a>
           </div>
 
           <div class="sponsors-grid">
@@ -373,7 +373,7 @@
         <div class="container">
           <span class="section-tag">Palestrantes</span>
           <h2>Participações especiais</h2>
-          <div class="cards speakers">
+          <div class="cards speakers" id="speakersGrid">
             <article class="card speaker-card">
               <div class="avatar">MB</div>
               <h3>Michelson Borges</h3>
@@ -518,30 +518,31 @@
         <div class="container two-col">
           <div>
             <span class="section-tag">Local</span>
-            <h2>Campina Grande - PB, na Quinta da Colina</h2>
-            <p>
+            <h2 id="locationTitle">Campina Grande - PB, na Quinta da Colina</h2>
+            <p id="locationText">
               O local principal já está definido. Informações complementares
               sobre oficinas e pontos de apoio serão divulgadas mais perto do
               evento.
             </p>
             <div class="location-box">
-              <strong>Quinta da Colina Maison</strong>
-              <span>Av. Dr. Elpídio de Almeida, 2007 • Catolé</span>
-              <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=Av.+Dr.+Elp%C3%ADdio+de+Almeida,+2007,+Catol%C3%A9,+Campina+Grande+-+PB" target="_blank" rel="noreferrer">Ver rota no mapa</a>
+              <strong id="locationName">Quinta da Colina Maison</strong>
+              <span id="locationAddress">Av. Dr. Elpídio de Almeida, 2007 • Catolé</span>
+              <a class="btn btn-secondary" id="locationLink" href="https://www.google.com/maps/search/?api=1&query=Av.+Dr.+Elp%C3%ADdio+de+Almeida,+2007,+Catol%C3%A9,+Campina+Grande+-+PB" target="_blank" rel="noreferrer">Ver rota no mapa</a>
             </div>
           </div>
 
           <div class="map-placeholder map-card">
             <iframe
               class="map-frame"
+              id="mapFrame"
               title="Mapa da Quinta da Colina"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               src="https://www.google.com/maps?q=Av.+Dr.+Elp%C3%ADdio+de+Almeida,+2007,+Catol%C3%A9,+Campina+Grande+-+PB&z=15&output=embed">
             </iframe>
             <div class="map-overlay">
-              <strong>Quinta da Colina</strong>
-              <span>Campina Grande • PB</span>
+              <strong id="mapOverlayTitle">Quinta da Colina</strong>
+              <span id="mapOverlayText">Campina Grande • PB</span>
             </div>
           </div>
         </div>
@@ -604,7 +605,7 @@
               para orientar líderes com mais detalhes perto do evento.
             </p>
           </div>
-          <a class="btn btn-primary" href="https://www.instagram.com/apalavrareveladaoficial/" target="_blank" rel="noreferrer">Falar com a organização</a>
+          <a class="btn btn-primary" id="caravanLink" href="https://www.instagram.com/apalavrareveladaoficial/" target="_blank" rel="noreferrer">Falar com a organização</a>
         </div>
       </section>
 
@@ -663,7 +664,7 @@
         <div class="container">
           <span class="section-tag">Perguntas frequentes</span>
           <h2>O que as pessoas mais querem saber antes de vir</h2>
-          <div class="faq-grid">
+          <div class="faq-grid" id="faqGrid">
             <article class="card faq-item">
               <h3>Como acompanhar as novidades?</h3>
               <p>Pelo Instagram oficial e pelo canal no YouTube, onde saem os anúncios e registros das edições.</p>
@@ -715,6 +716,7 @@
       </div>
     </footer>
 
+    <script src="conteudo.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
