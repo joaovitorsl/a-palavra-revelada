@@ -529,7 +529,7 @@ small {
 
 .schedule-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
 
@@ -544,6 +544,39 @@ small {
 .schedule-card h3 {
   margin: 0 0 8px;
   color: var(--navy);
+}
+
+.sponsor-shell {
+  align-items: start;
+}
+
+.sponsors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.sponsor-card {
+  padding: 22px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #081325 0%, #152d55 100%);
+  border: 1px solid rgba(147, 205, 255, 0.16);
+  box-shadow: var(--shadow);
+}
+
+.sponsor-card span {
+  display: block;
+  margin-bottom: 10px;
+  color: #9ed8ff;
+  font-family: "Space Mono", monospace;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.sponsor-card strong {
+  color: #ffffff;
+  font-size: 1.1rem;
 }
 
 .schedule-note {
@@ -911,6 +944,7 @@ small {
   .stats-grid,
   .schedule-grid,
   .editions-grid,
+  .sponsors-grid,
   .section-cta-banner,
   .caravan-box,
   .footer-content {
