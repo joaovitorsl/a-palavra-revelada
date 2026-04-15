@@ -1,4 +1,4 @@
-const targetDate = new Date('2027-02-06T08:00:00-03:00').getTime();
+const targetDate = new Date('2027-02-05T08:00:00-03:00').getTime();
 const officialInstagram = 'https://www.instagram.com/apalavrareveladaoficial/';
 const registrationTarget = 2000;
 const registrationInitial = 1372;

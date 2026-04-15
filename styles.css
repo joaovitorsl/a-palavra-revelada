@@ -772,66 +772,104 @@ small {
   margin-top: 22px;
 }
 
-.history-timeline {
-  position: relative;
+.history-intro {
+  max-width: 740px;
+  margin: 0 0 18px;
+}
+
+.history-horizontal {
   display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, 340px);
   gap: 18px;
-  margin-top: 28px;
-  padding: 10px 0;
+  overflow-x: auto;
+  padding: 8px 6px 18px;
+  scroll-snap-type: x proximity;
 }
 
-.history-timeline::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  transform: translateX(-50%);
-  background: linear-gradient(180deg, rgba(105, 183, 255, 0.2), rgba(230, 184, 92, 0.24), rgba(197, 31, 56, 0.24));
+.history-horizontal::-webkit-scrollbar {
+  height: 10px;
 }
 
-.history-item {
-  position: relative;
-  width: calc(50% - 28px);
-  padding: 18px 20px;
-  border-radius: 18px;
+.history-horizontal::-webkit-scrollbar-thumb {
+  background: rgba(105, 183, 255, 0.22);
+  border-radius: 999px;
+}
+
+.history-slide {
+  display: grid;
+  gap: 14px;
+  min-height: 100%;
+  padding: 12px;
+  border-radius: 20px;
+  scroll-snap-align: start;
   background: linear-gradient(180deg, rgba(12, 18, 31, 0.96), rgba(9, 14, 24, 0.98));
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: var(--shadow);
   transition: transform 0.22s ease, border-color 0.22s ease;
 }
 
-.history-item:hover {
+.history-slide:hover {
   transform: translateY(-2px);
   border-color: rgba(230, 184, 92, 0.18);
 }
 
-.history-item:nth-child(odd) {
-  margin-right: auto;
+.history-visual {
+  position: relative;
+  min-height: 170px;
+  border-radius: 14px;
+  padding: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(135deg, rgba(16, 32, 58, 0.96), rgba(8, 15, 28, 0.98));
 }
 
-.history-item:nth-child(even) {
-  margin-left: auto;
-}
-
-.history-item::before {
+.history-visual::after {
   content: "";
   position: absolute;
-  top: 24px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #69b7ff, #e6b85c);
-  box-shadow: 0 0 0 5px rgba(105, 183, 255, 0.08);
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.02), transparent 55%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08), transparent 0 18%);
 }
 
-.history-item:nth-child(odd)::before {
-  right: -34px;
+.history-year {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.04em;
 }
 
-.history-item:nth-child(even)::before {
-  left: -34px;
+.history-visual small {
+  position: relative;
+  z-index: 1;
+  color: rgba(240, 248, 255, 0.72);
+  font-family: "Space Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.history-photo-tag {
+  position: relative;
+  z-index: 1;
+  align-self: flex-start;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px dashed rgba(255, 255, 255, 0.28);
+  background: rgba(7, 12, 22, 0.26);
+  color: rgba(255, 255, 255, 0.78);
+  font-style: normal;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.history-copy {
+  padding: 2px 6px 6px;
 }
 
 .history-badge {
@@ -846,18 +884,18 @@ small {
   text-transform: uppercase;
 }
 
-.history-item h3 {
+.history-copy h3 {
   margin: 10px 0 8px;
   color: #ffffff;
 }
 
-.history-item p {
+.history-copy p {
   margin: 0;
   color: rgba(255, 255, 255, 0.78);
 }
 
 .history-item-muted {
-  opacity: 0.84;
+  opacity: 0.9;
 }
 
 .history-item-highlight {
@@ -866,6 +904,34 @@ small {
 
 .history-item-current {
   border-color: rgba(230, 184, 92, 0.22);
+}
+
+.visual-soft {
+  background: linear-gradient(135deg, #0d1627 0%, #101d31 100%);
+}
+
+.visual-blue {
+  background: linear-gradient(135deg, #0d213f 0%, #173d68 100%);
+}
+
+.visual-navy {
+  background: linear-gradient(135deg, #141421 0%, #1d2e48 100%);
+}
+
+.visual-gold {
+  background: linear-gradient(135deg, #3d2d11 0%, #755322 100%);
+}
+
+.visual-cyan {
+  background: linear-gradient(135deg, #0d2732 0%, #0f4c5b 100%);
+}
+
+.visual-red {
+  background: linear-gradient(135deg, #341017 0%, #7d2335 100%);
+}
+
+.visual-future {
+  background: linear-gradient(135deg, #14243c 0%, #2b5f8f 100%);
 }
 
 .faq-grid {
