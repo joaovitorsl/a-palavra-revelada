@@ -1,0 +1,9 @@
+<svg width="620" height="220" viewBox="0 0 620 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M145 98L195 52L176 96H267C282 96 296 100 309 108C322 100 336 96 351 96H444L425 52L475 98H350C333 98 320 103 309 114C298 103 285 98 268 98H145Z" fill="#17294D"/>
+  <path d="M308 18V110" stroke="#17294D" stroke-width="12" stroke-linecap="round"/>
+  <path d="M281 34H335" stroke="#17294D" stroke-width="12" stroke-linecap="round"/>
+  <path d="M321 60C330 74 331 93 320 110C313 121 307 132 308 148" stroke="#B51128" stroke-width="10" stroke-linecap="round"/>
+  <path d="M309 148C307 133 298 123 288 114" stroke="#B51128" stroke-width="10" stroke-linecap="round"/>
+  <text x="62" y="172" fill="#17294D" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="800">A PALAVRA</text>
+  <text x="126" y="210" fill="#1D67B3" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="800">REVELADA</text>
+</svg>
