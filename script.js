@@ -1,5 +1,7 @@
 const targetDate = new Date('2027-02-06T08:00:00-03:00').getTime();
 const officialInstagram = 'https://www.instagram.com/apalavrareveladaoficial/';
+const registrationTarget = 2000;
+const registrationInitial = 1372;
 
 function updateCountdown() {
   const now = Date.now();
@@ -27,6 +29,34 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
+const registrationCountEl = document.getElementById('registrationCount');
+const registrationFillEl = document.getElementById('registrationFill');
+
+function animateRegistrations() {
+  if (!registrationCountEl || !registrationFillEl) return;
+
+  const duration = 1400;
+  const start = performance.now();
+
+  function frame(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const currentValue = Math.round(registrationInitial * eased);
+    const fillPercent = (currentValue / registrationTarget) * 100;
+
+    registrationCountEl.textContent = String(currentValue);
+    registrationFillEl.style.width = `${fillPercent}%`;
+
+    if (progress < 1) {
+      requestAnimationFrame(frame);
+    }
+  }
+
+  requestAnimationFrame(frame);
+}
+
+animateRegistrations();
+
 const root = document.documentElement;
 
 window.addEventListener('pointermove', (event) => {
@@ -35,7 +65,7 @@ window.addEventListener('pointermove', (event) => {
 });
 
 const revealTargets = document.querySelectorAll(
-  '.stat-card, .info-panel, .quote-card, .timeline-item, .card, .gallery-card, .faq-item, .location-box, .map-placeholder, .volunteer-form, .pix-card'
+  '.stat-card, .info-panel, .quote-card, .timeline-item, .schedule-card, .edition-card, .card, .gallery-card, .faq-item, .location-box, .map-placeholder, .volunteer-form, .pix-card'
 );
 
 revealTargets.forEach((element) => {
@@ -56,8 +86,28 @@ const revealObserver = new IntersectionObserver(
 
 revealTargets.forEach((element) => revealObserver.observe(element));
 
+const heroTitle = document.querySelector('.hero-title-stack');
+const heroOrbA = document.querySelector('.hero-orb-a');
+const heroOrbB = document.querySelector('.hero-orb-b');
+
+window.addEventListener('scroll', () => {
+  const offset = window.scrollY;
+
+  if (heroTitle) {
+    heroTitle.style.transform = `translateY(${offset * 0.08}px)`;
+  }
+
+  if (heroOrbA) {
+    heroOrbA.style.transform = `translateY(${offset * 0.12}px)`;
+  }
+
+  if (heroOrbB) {
+    heroOrbB.style.transform = `translateY(${offset * -0.06}px)`;
+  }
+});
+
 if (window.matchMedia('(pointer: fine)').matches) {
-  const tiltTargets = document.querySelectorAll('.tilt-card, .hero-card, .gallery-card');
+  const tiltTargets = document.querySelectorAll('.tilt-card, .hero-card, .gallery-card, .edition-card');
 
   tiltTargets.forEach((card) => {
     card.addEventListener('mousemove', (event) => {

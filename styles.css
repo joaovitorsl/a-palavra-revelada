@@ -356,12 +356,52 @@ small {
 }
 
 .countdown-card,
-.theme-card {
+.theme-card,
+.registration-card {
   padding: 16px;
 }
 
-.theme-card {
+.theme-card,
+.registration-card {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.registration-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 8px 0 12px;
+}
+
+.registration-head strong {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  line-height: 1;
+  color: #ffffff;
+}
+
+.registration-head span {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.9rem;
+}
+
+.registration-bar {
+  width: 100%;
+  height: 12px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(147, 205, 255, 0.12);
+}
+
+.registration-bar span {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #b51128 0%, #ff4d6d 35%, #73d7ff 100%);
+  box-shadow: 0 0 18px rgba(115, 215, 255, 0.24);
+  transition: width 1.2s ease;
 }
 
 .card-label {
@@ -403,6 +443,19 @@ small {
 
 .strip {
   background: linear-gradient(180deg, rgba(8, 17, 36, 0.98) 0%, rgba(8, 17, 36, 0.95) 100%);
+}
+
+.section-cta-banner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.section-cta-banner h2 {
+  margin: 10px 0 0;
+  color: #ffffff;
 }
 
 .stats-grid {
@@ -465,6 +518,42 @@ small {
   padding: 20px;
 }
 
+.schedule-shell {
+  display: grid;
+  gap: 24px;
+}
+
+.schedule-intro {
+  max-width: 760px;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.schedule-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(244, 248, 255, 0.98));
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(23, 41, 77, 0.08);
+}
+
+.schedule-card h3 {
+  margin: 0 0 8px;
+  color: var(--navy);
+}
+
+.schedule-note {
+  margin: 0;
+  padding: 14px 18px;
+  border-left: 3px solid var(--blue);
+  background: rgba(29, 103, 179, 0.06);
+  border-radius: 12px;
+}
+
 .day {
   display: inline-block;
   margin-bottom: 12px;
@@ -489,6 +578,46 @@ small {
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
   margin-top: 22px;
+}
+
+.editions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.edition-card {
+  padding: 22px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, #081325 0%, #112a4d 100%);
+  border: 1px solid rgba(147, 205, 255, 0.14);
+  box-shadow: var(--shadow);
+}
+
+.edition-card h3 {
+  margin: 10px 0 8px;
+  color: #ffffff;
+}
+
+.edition-card p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.edition-number {
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #9ed8ff;
+  font-family: "Space Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.edition-card-highlight {
+  background: linear-gradient(135deg, #2b0d13 0%, #8f1830 48%, #152f59 100%);
 }
 
 .faq-grid {
@@ -780,6 +909,9 @@ small {
   .gallery-grid,
   .faq-grid,
   .stats-grid,
+  .schedule-grid,
+  .editions-grid,
+  .section-cta-banner,
   .caravan-box,
   .footer-content {
     grid-template-columns: 1fr;
