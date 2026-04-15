@@ -628,51 +628,48 @@ small {
   gap: 16px;
 }
 
-.lineup-board {
-  position: relative;
+.schedule-carousel {
   display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(260px, 320px);
   gap: 16px;
-  padding-left: 22px;
+  overflow-x: auto;
+  padding: 4px 4px 12px;
+  scroll-snap-type: x proximity;
 }
 
-.lineup-board::before {
-  content: "";
-  position: absolute;
-  left: 7px;
-  top: 8px;
-  bottom: 8px;
-  width: 2px;
-  background: linear-gradient(180deg, rgba(105, 183, 255, 0.2), rgba(230, 184, 92, 0.28));
+.schedule-carousel::-webkit-scrollbar {
+  height: 10px;
 }
 
-.lineup-day {
-  position: relative;
-  padding: 18px 18px 18px 20px;
+.schedule-carousel::-webkit-scrollbar-thumb {
+  background: rgba(105, 183, 255, 0.22);
+  border-radius: 999px;
+}
+
+.schedule-day-card {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  min-height: 100%;
   border-radius: 18px;
+  scroll-snap-align: start;
   background: linear-gradient(180deg, rgba(10, 17, 29, 0.92), rgba(7, 12, 22, 0.98));
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 16px 34px rgba(0, 0, 0, 0.22);
   transition: transform 0.22s ease, border-color 0.22s ease;
 }
 
-.lineup-day:hover {
-  transform: translateX(4px);
+.schedule-day-card:hover {
+  transform: translateY(-3px);
   border-color: rgba(105, 183, 255, 0.2);
 }
 
-.lineup-day::before {
-  content: "";
-  position: absolute;
-  left: -20px;
-  top: 30px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #69b7ff, #e6b85c);
-  box-shadow: 0 0 0 5px rgba(105, 183, 255, 0.08);
+.schedule-day-card-highlight {
+  border-color: rgba(230, 184, 92, 0.28);
 }
 
-.lineup-head h3 {
+.schedule-day-top h3 {
   margin: 8px 0 0;
   color: #ffffff;
 }
@@ -685,24 +682,29 @@ small {
   letter-spacing: 0.08em;
 }
 
-.lineup-slots {
-  display: flex;
-  flex-wrap: wrap;
+.schedule-turns {
+  display: grid;
   gap: 10px;
-  margin-top: 14px;
 }
 
-.lineup-slots span {
-  padding: 8px 11px;
-  border-radius: 999px;
+.schedule-turn {
+  display: grid;
+  gap: 6px;
+  padding: 12px 13px;
+  border-radius: 14px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  color: rgba(240, 248, 255, 0.86);
-  font-size: 0.82rem;
 }
 
-.lineup-day-highlight {
-  border-color: rgba(230, 184, 92, 0.26);
+.schedule-turn strong {
+  color: #ffffff;
+  font-size: 0.92rem;
+}
+
+.schedule-turn span {
+  color: rgba(240, 248, 255, 0.82);
+  font-size: 0.84rem;
+  line-height: 1.5;
 }
 
 .sponsor-shell {
@@ -1449,8 +1451,8 @@ small {
     grid-template-columns: 1fr;
   }
 
-  .lineup-board {
-    padding-left: 18px;
+  .schedule-carousel {
+    grid-auto-columns: minmax(240px, 86vw);
   }
 
   .history-timeline::before {
